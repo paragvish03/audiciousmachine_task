@@ -30,7 +30,13 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      Gender: { type: Sequelize.TEXT, },
+      mobile: { type: Sequelize.TEXT, },
+      photo: { type: Sequelize.TEXT, },
+      Country: { type: Sequelize.TEXT, },
+      State: { type: Sequelize.TEXT, },
+      City: { type: Sequelize.TEXT, },
     });
   },
   async down(queryInterface, Sequelize) {

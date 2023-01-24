@@ -1,0 +1,63 @@
+<style>
+    .cards{
+        display: inline-block;
+        width: 200px;
+        height: 300px;
+        padding: 10px 10px 20px 40px;
+    }
+    .cardscontainer{
+        display: flex;
+        justify-content: center;
+        height: 50vh;
+    }
+    h2{
+        color: green;
+    }
+    .pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+</style>
+
+<%- include("navbar")%>
+<div class="cardscontainer">
+  
+ <% products.forEach(function(user){ %>
+    <div class="cards" style="border: 2px solid rgb(112, 105, 105); margin-bottom: 3px; border-radius: 20px;margin: 30px 30px 0px 0px;">
+          <h2><%= user.categories %>s</h2>
+         <img src="<%= user.url %>" alt="" style="height: 90px;"> 
+        <h4><%= user.name %></h4>
+        <h4> <%= user.quantity %> piece</h4>
+        <h4>₹ <%= user.price %></h4>
+       
+    </div>
+
+    <% }); %>
+   
+</div>  
+
+
+
+<footer>
+
+   
+</footer>
+
+

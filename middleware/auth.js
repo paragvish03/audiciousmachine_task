@@ -7,7 +7,7 @@ const {MYKEY} = require('../utility/utility')
 
 exports.checktoken = async function (req, res, next) {
 
-    let token = req.headers['jwt_token']
+    let token = req.cookies.jwt_token
     try {
 
         if (token) {
@@ -16,6 +16,8 @@ exports.checktoken = async function (req, res, next) {
                     res.send({ message: 'session invalid or expire' })
                 } else {
                     req.ID = decode.id
+                   
+                    console.log("<<<>>>"+req.ID)
                     next()
                 }
 
@@ -45,3 +47,29 @@ exports.checkrole = async function (req, res,next) {
         res.send(error)
     }
 }
+exports.logout = async(req,res)=>{
+    try {
+        let token = jwt.sign({ id:req.ID }, MYKEY, { expiresIn: "1s" })
+        res.cookie('jwt_token', token, { httpOnly: true, maxAge:1 })
+        res.redirect("/")
+    } catch (error) {
+        res.send({ message: "error"})
+    }
+}
+
+exports.profile_photo = (req, res, next) => {
+    if (req.file) {
+        req.filename = req.file.filename
+    } else {
+        req.filename = 'no_profile.png'
+    }
+    next()
+}
+
+exports.profile_picture = (req, res, next) => {
+    if (req.file) {
+        req.filename = req.file.filename
+    } 
+    next()
+}
+

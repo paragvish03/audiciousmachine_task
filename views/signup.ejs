@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  
+    <!-- * sign in page -->
+    <div class="wrapper login">
+        <div class="container">
+            <div class="col-left-clicked col-left" id="col-left-id">
+                <div class="login-text">
+                    <h2>Welcome!</h2>
+                    <p>Create your account.<br />For Free!</p>
+
+                    <!-- * sign up page -->
+                    <form action="/signup" method="post" enctype="multipart/form-data"> 
+                    <div class="signup-form dnone" id="signup-form-id">
+                            <div class="signup-top">
+                                <div class="signup-t-right">
+                                    <p>
+                                        <label for="fname">Full Name <span>*</span></label>
+                                        <input type="text" name="name" id="fname" placeholder="First Name" required />
+                                    </p>
+                                </div>
+                                <div class="singup-t-left">
+                                    <p class="profile-container">
+                                        <label> Profile picture <span>*</span></label>
+                                        <input
+                                        name="photo"
+                                          type="file"
+                                          id="profile-pic"
+                                         
+                                          style="display: none"
+                                        />
+                                        <label for="profile-pic" class="profile-label"
+                                          ><i class="fa-solid fa-cloud-arrow-up"></i>
+                                        </label>
+                                      </p>
+                                </div>
+                            </div>
+                            <div class="signup-bottom">
+                                <div class="signup-b-right">
+                                    <p>
+                                        <label for="number">Mobile Number <span>*</span></label>
+                                        <input type="number" name="mobile" class="number" id="number"
+                                            placeholder="Mobile number" required />
+                                    </p>
+                                    <p>
+                                        <label for="email-signup">Email <span>*</span></label>
+                                        <input type="email" name="email" id="email-signup" placeholder="Email"
+                                            required />
+                                    </p>
+                                    <p>
+                                        <label for="pwd-signup">Password <span>*</span></label>
+                                        <input type="password" name="password" id="pwd-signup" placeholder="Password"
+                                            required />
+                                    </p>
+                                </div>
+                                <div class="signup-b-left">
+                                    <div>
+                                        <label>Gender <span>*</span></label>
+                                        <div class="signup-radio">
+                                            <input name="Gender" type="radio" class="gender" id="Male" value="male"
+                                                placeholder="Mobile number" required />
+                                            <label for="Male">Male </label>
+                                            <input name="Gender" type="radio" class="gender" id="Female" value="Female"
+                                                placeholder="Mobile number" required />
+                                            <label for="Female">Female </label>
+                                            <input name="Gender" type="radio" class="gender" id="Other" value="Other"
+                                                placeholder="Mobile number" required />
+                                            <label for="Other">Other </label>
+                                        </div>
+                                    </div>
+                                    <p class="signup-b-left-p">
+                                        <label for="country">Country <span>*</span></label>
+                                        <select name="Country" id="country">
+                                            <option value=""></option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="India">India</option>
+                                            <option value="United State of america">United State of america</option>
+                                            <option value="China">China</option>
+                                            <option value="Russia">Russia</option>
+                                            <option value="United kingdom">United kingdom</option>
+                                        </select>
+                                    </p>
+                                    <p class="signup-b-left-p">
+                                        <label for="state">State <span>*</span></label>
+                                        <select name="state" id="state">
+                                            <option value=""></option>
+                                            <option value="Andra Pradesh">Andra Pradesh</option>
+                                            <option value="Maharastra">Maharastra</option>
+                                            <option value="Madhya pradesh">Madhya pradesh</option>
+                                            <option value="Chatisgarh">Chatisgarh</option>
+                                       
+                                        </select>
+                                    </p>
+                                    <p class="signup-b-left-p">
+                                        <label for="city">City <span>*</span></label>
+                                        <input type="text" name="City" id="city">
+                                    </p><br><br>
+
+                                    <input class="click_signup" type="submit"
+                                        value="click Sign up">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="submit" id="signup-btn">
+                        <a href="/signup" class="btn">create user</a>
+                    </button>
+                </div>
+            </div>
+            <div class="dnone col-right" id="col-right-id">
+                <div class="login-form">
+                    <h2>Login</h2>
+                    <form action="/signin" method="post">
+                        <p>
+                            <label for="email">Username/Email address<span>*</span></label>
+                            <input type="email" name="email" id="email" placeholder="Username or Email" required />
+                        </p>
+                        <p>
+                            <label for="pwd">Password<span>*</span></label>
+                            <input type="password" name="password" id="pwd" placeholder="Password" required />
+                        </p>
+                        <p>
+                            <input type="submit" value="Sign In" />
+                        </p>
+                        <p><a href="">Forgot password?</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

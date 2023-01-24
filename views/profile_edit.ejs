@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/profile_edit.css">
+
+</head>
+
+<body>
+  
+  <div class="layout">
+
+    <a class="header" href="#0">
+      <i class="fa fa-bars"></i>
+     
+    </a>
+
+    <div class="sidebar">
+      <ul>
+        <li> <a class="sidebar-list-item" href="/home"> <i class="fas fa-home icon"></i><em>HOME</em></a></li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-user icon"></i><em>Users</em></a></li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-tasks icon"></i><em>Projects</em></a></li>
+        <li> <a class="sidebar-list-item active" href="#0"> <i class="fas fa-calendar icon"></i><em>Dashboard</em></a>
+        </li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-toolbox icon"></i><em>Preferences</em></a>
+        </li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-comments icon"></i><em>Feedback</em></a></li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-lightbulb icon"></i><em>Suggestions</em></a>
+        </li>
+      </ul>
+    </div>
+
+    <main class="content">
+      <div class="main-header">
+        <div class="main-title">
+          <h2> <div class="header-user" style="color: rgb(2, 73, 240);font-weight: bolder;"><i
+            class="fas fa-user-circle icon"></i>Hello, <%= result.name%>
+        </div></h2>
+        </div>
+        <div class="main-form">
+
+
+          <form action="/profile/updated " method="post" enctype="multipart/form-data" >
+            <label for="file-input">
+              <img src="/<%= result.photo%>"  style="height: 80px;"/>
+            </label>
+            <input id="file-input" type="file" name="photo" value="/<%= result.photo%>" style="display: none;">
+            <input type="text" name="name" value="<%= result.name%>">
+            <input type="text" name="Gender" value="<%= result.Gender%>">
+            <input type="text" name="mobile" value="<%= result.mobile%>">
+
+            <select name="Country" id="country" required value="<%= result.Country%> ">
+              <option value=""></option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="India">India</option>
+              <option value="United State of america">United State of america</option>
+              <option value="China">China</option>
+              <option value="Russia">Russia</option>
+              <option value="United kingdom">United kingdom</option>
+            </select>
+            <select name="State" id="state" required value="<%= result.State%> ">
+              <option value=""></option>
+              <option value="Andra Pradesh">Andra Pradesh</option>
+              <option value="Maharastra">Maharastra</option>
+              <option value="Madhya pradesh">Madhya pradesh</option>
+              <option value="Chatisgarh">Chatisgarh</option>
+         
+          </select>
+
+
+            <input type="text" required name="City" value="<%= result.City%> ">
+
+            <input id="click" type="submit" value="Save changes"  >
+          </form>
+
+
+
+
+
+      
+    </main>
+
+    <footer class="footer">
+      <div class="footer_sign">made with <span class="fas fa-heart"></span> by <a href="https://mafda.github.io/"
+          target="blank">mafda</a></div>
+    </footer>
+
+  </div>
+</body>
+
+
+
+
+</body>
+
+
+</html>

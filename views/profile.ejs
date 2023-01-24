@@ -1,0 +1,55 @@
+
+<%- include("navbar2")%>
+<link rel="stylesheet" href="profile.css">
+<body> 
+
+    <div class="layout">
+
+  
+      <div class="sidebar" style="    margin-top: 48px;">
+        <ul>
+          <li> <a class="sidebar-list-item" href="#0"><em>events</em></a></li>
+          <li> <a class="sidebar-list-item" href="#0"><em>Users</em></a></li>
+          <li> <a class="sidebar-list-item" href="#0"> <em>Projects</em></a></li>
+          <li> <a class="sidebar-list-item active" href="#0"> <em>Dashboard</em></a>
+          </li>
+          <li> <a class="sidebar-list-item" href="#0"><em>Preferences</em></a>
+          </li>
+          <li> <a class="sidebar-list-item" href="#0">  <em>Feedback</em></a></li>
+          <li> <a class="sidebar-list-item" href="#0"> <em>Suggestions</em></a>
+          </li>
+        </ul>
+      </div>
+  
+      <main class="content" style="z-index: 1;">
+        <div class="main-header">
+          <div class="main-title">
+           <h2> <div class="header-user" style="color: rgb(2, 73, 240);font-weight: bolder;">Hello, <%= result.name%> </div>
+           </h2>
+          </div>
+          <div class="main-form">
+            <div class="profilephoto">
+                 <img src='/<%= result.photo %>' alt="" srcset="" style="height: 80px;">
+            </div>
+           
+    
+            <h3><%= result.Gender%></h3>
+            <h3><%= result.mobile%></h3>  
+            <h3> <%= result.Country%> </h3>
+            <h3> <%= result.State%> </h3>
+            <h3> <%= result.City%> </h3>
+
+
+
+          </div>
+
+          <a href="/profile/edit" style="font-size: larger ; color: red;"> Edit </a>
+        </div>
+      </main>
+  
+      <footer class="footer">
+        <div class="footer_sign">made with <span class="fas fa-heart"></span> by <a href="https://mafda.github.io/" target="blank">mafda</a></div>
+      </footer>
+  
+    </div>
+  </body>
